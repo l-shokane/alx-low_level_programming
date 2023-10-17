@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_array - function anem
+ * print_array - function name
  * @a : first parameter
  * @n : second parameter
  */
@@ -14,7 +14,7 @@ void print_array(int *a, int n)
 		printf("%d", a[i]);
 		{
 			if (i < n - 1)
-				printf(",");
+				printf(", ");
 		}
 		printf("\n");
 	}
