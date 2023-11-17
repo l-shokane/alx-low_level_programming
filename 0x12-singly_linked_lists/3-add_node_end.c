@@ -8,25 +8,25 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *temp;
-	list_t *node_new;
+	list_t *tmp;
+	list_t *new_node;
 
-	temp = *head;
+	tmp = *head;
 	if (head == NULL)
 	{
 		return (NULL);
 	}
-		node_new = create_node(str);
-	if (node_new == NULL)
+		new_node = create_node(str);
+	if (new_node == NULL)
 		return (NULL);
 	if (*head == NULL)
 	{
-		*head = node_new;
+		*head = new_node;
 		return (*head);
 	}	
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = node_new;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new_node;
 	return (*head);
 }
 /**
@@ -36,22 +36,21 @@ list_t *add_node_end(list_t **head, const char *str)
  */
 list_t *create_node(const char *str)
 {
-	list_t *node_new;
+	list_t *new_node;
 
-	node_new = malloc(sizeof(list_t));
-	if (node_new == NULL)
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
 		return (NULL);
-	node_new->str = strdup(str);
-	node_new->len = len(str);
-	node_new->next = NULL;
-	return (node_new);
+	new_node->str = strdup(str);
+	new_node->len = len(str);
+	new_node->next = NULL;
+	return (new_node);
 }
 /**
  * len - length of string
  * @str: string
  * Return: length
  */
-
 int len(const char *str)
 {
 	int i;
@@ -59,7 +58,7 @@ int len(const char *str)
 	if (str == NULL)
 	return (0);
 
-	i = 0;
+	i = 1;
 	while (str[i] != '\0')
 	{
 		i++;
