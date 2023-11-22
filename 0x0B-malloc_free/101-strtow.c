@@ -12,6 +12,7 @@ void ch_free_grid(char **grid, size_t height)
 	if (grid != NULL && height != 0)
 	{
 	size_t i;
+
 	for (i = 0; i < height; i++)
 	{
 		free(grid[i]);
@@ -50,6 +51,7 @@ char **strtow(char *str)
 	for (i = al = 0; i < height; i++)
 	{
 	size_t word_len = 0;
+
 	while (str[al] == ' ')
 		al++;
 
@@ -66,11 +68,10 @@ char **strtow(char *str)
 
 	for (j = 0; j < word_len; j++)
 	{
-		aout[i][j] = str[al + j];
+	aout[i][j] = str[al + j];
 	}
 	aout[i][j] = '\0';
 
-        
 	al += word_len;
 	}
 
@@ -78,5 +79,3 @@ char **strtow(char *str)
 
 	return (aout);
 }
-
-
